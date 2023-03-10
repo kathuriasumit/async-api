@@ -13,11 +13,11 @@ info:
     url: https://opensource.org/licenses/MIT
 defaultContentType: application/json
 channels:
-  user/signedup:
+  user1/signedup1:
     description: The topic on which user signed up events may be consumed
     subscribe:
       summary: Receive informations about user signed up
-      operationId: receivedUserSIgnedUp
+      operationId: receivedUserSIgnedUp1
       message:
         description: An event describing that a user just signed up.
         bindings:
@@ -52,7 +52,7 @@ channels:
                   "sentAt": "2020-03-11T08:03:28Z"
                 }
               payload: |-
-                {"fullName": "Laurent Broudoux", "email": "laurent@microcks.io", "age": 41}
+                {"fullName": "Nikhil Broudoux", "email": "laurent@microcks.io", "age": 41}
           - john:
               summary: Example for John Doe user
               headers:
@@ -64,6 +64,6 @@ channels:
                 content-type: application/avro
                 sentAt: "2020-03-11T08:03:38Z"
               payload:
-                fullName: John Doe
+                fullName: Sumit Doe
                 email: john@microcks.io
                 age: 36

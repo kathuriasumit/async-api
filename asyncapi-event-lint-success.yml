@@ -13,11 +13,11 @@ info:
     url: https://opensource.org/licenses/MIT
 defaultContentType: application/json
 channels:
-  user/signedup:
+  user2/signedup2:
     description: The topic on which user signed up events may be consumed
     subscribe:
       summary: Receive informations about user signed up
-      operationId: receivedUserSIgnedUp
+      operationId: receivedUserSIgnedUp2
       message:
         description: An event describing that a user just signed up.
         bindings:
