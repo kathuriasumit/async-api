@@ -1,0 +1,9 @@
+{"namespace": "com.amway.commerce.v1",
+  "type": "record",
+  "name": "User1",
+  "fields": [
+    {"name": "fullName", "type": "string"},
+    {"name": "email",  "type": "string"},
+    {"name": "age", "type": "int"}
+  ]
+}

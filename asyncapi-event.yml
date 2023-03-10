@@ -37,7 +37,7 @@ channels:
         contentType: avro/binary
         schemaFormat: application/vnd.apache.avro+json;version=1.9.0
         payload:
-          $ref: './user-signedup.avsc#/User'
+          $ref: './user-new.avsc#/User1'
         examples:
           - laurent:
               summary: Example for Laurent user
