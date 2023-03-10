@@ -1,8 +1,8 @@
 asyncapi: '2.1.0'
 id: 'urn:io.microcks.example.user-signedup'
 info:
-  title: microcks-binary-cloudevents-default
-  version: 0.1.3
+  title: microcks-binary-cloudevents-lint-ok
+  version: 2.1.3
   description: Sample AsyncAPI for user signedup events defined using CloudEvents binary
   contact:
     name: Laurent Broudoux
@@ -37,7 +37,7 @@ channels:
         contentType: avro/binary
         schemaFormat: application/vnd.apache.avro+json;version=1.9.0
         payload:
-          $ref: './user-signedup.avsc#/User'
+          $ref: './user-signedup.avsc'
         examples:
           - laurent:
               summary: Example for Laurent user
