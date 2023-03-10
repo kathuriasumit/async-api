@@ -37,7 +37,7 @@ channels:
         contentType: avro/binary
         schemaFormat: application/vnd.apache.avro+json;version=1.9.0
         payload:
-          $ref: './user-new2.avsc'
+          $ref: 'https://raw.githubusercontent.com/nagarro-nikhiljagtiani/async-api-test/main/user-new2.avsc'
         examples:
           - laurent:
               summary: Example for Laurent user
