@@ -1,0 +1,6 @@
+extends: spectral:asyncapi
+rules:
+
+  asyncapi-message-examples: off
+
+  

@@ -1,4 +1,4 @@
-{"namespace": "com.amway.commerce.v1",
+{"namespace": "com.async.event.user.v1",
   "type": "record",
   "name": "User",
   "fields": [

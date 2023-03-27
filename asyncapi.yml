@@ -1,0 +1,67 @@
+asyncapi: '2.1.0'
+id: 'urn:io.microcks.example.user-signedup'
+info:
+  title: microcks-binary-cloudevents-lint-ok-part-3
+  version: 2.1.4
+  description: Sample AsyncAPI for user signedup events defined using CloudEvents binary
+  contact:
+    name: Laurent Broudoux
+    url: https://github.com/lbroudoux
+    email: laurent.broudoux@gmail.com
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+defaultContentType: application/json
+channels:
+  user3/signedup3:
+    description: The topic on which user signed up events may be consumed
+    subscribe:
+      summary: Receive informations about user signed up
+      operationId: receivedUserSignedUp2
+      message:
+        $ref: '#/components/messages/userSignedUpCloudEvent'
+
+components:
+  messages:
+    userSignedUpCloudEvent:
+      name: UserSignedUpCloudEvent
+      title: UserSignedUpCloudEvent
+      summary: An event describing that a user just signed up.
+      bindings:
+          kafka:
+            key:
+              type: string
+              description: Timestamp of event as milliseconds since 1st Jan 1970
+      contentType: 'application/octet-stream'
+      schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
+      traits:
+      - $ref: 'https://raw.githubusercontent.com/microcks/microcks-quickstarters/main/cloud/cloudevents/cloudevents-v1.0.1-asyncapi-trait.yml'
+      payload:
+        $ref: './user-signedup.avsc'
+      examples:
+        - name: Laurent1
+          summary: Example for Laurent user
+          headers:
+              ce_specversion: "1.0"
+              ce_type: "com.example.someevent"
+              ce_source: "/mycontext/subcontext"
+              ce_id: "{{uuid()}}"
+              ce_time: "{{now(yyyy-MM-dd'T'HH:mm:SS'Z')}}"
+              content-type: "application/avro"
+              sentAt: "2020-03-15T08:03:28Z"
+          payload:
+            fullName: "Laurent14 Broudoux"
+            email: "laurent@microcks.io"
+            age: 44
+        - name: john
+          summary: Example for john user
+          headers: 
+              "ce_specversion": "1.0"
+              "ce_type": "com.example.someevent"
+              "ce_source": "/mycontext/subcontext"
+              "ce_id": "1234-1234-1234"
+              "ce_time": "2020-03-11T08:03:28Z"
+              "content-type": "application/avro"
+              "sentAt": "2020-03-11T08:03:28Z"
+          payload: |-
+            {"fullName": "john12", "email": "john@microcks.io", "age": 11}
