@@ -1,9 +1,83 @@
-{"namespace": "com.async.event.user.v1",
-  "type": "record",
-  "name": "User",
-  "fields": [
-    {"name": "fullName", "type": "string"},
-    {"name": "email",  "type": "string"},
-    {"name": "age", "type": "int"}
-  ]
+{
+  "type" : "record",
+  "name" : "User",
+  "namespace" : "com.async.event.user.v1",
+  "fields" : [ {
+    "name" : "status",
+    "type" : {
+      "type" : "enum",
+      "name" : "Status",
+      "symbols" : [ "ACTIVE", "BLOCKED", "INACTIVE" ],
+      "aliases" : [ "com.async.event.user.Status" ]
+    },
+    "default" : "ACTIVE"
+  }, {
+    "name" : "billing_address",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Address",
+      "fields" : [ {
+        "name" : "code",
+        "type" : "string",
+        "doc" : "address code"
+      }, {
+        "name" : "line1",
+        "type" : "string",
+        "doc" : "line1"
+      }, {
+        "name" : "line2",
+        "type" : "string",
+        "doc" : "line2"
+      }, {
+        "name" : "line3",
+        "type" : [ "null", "string" ],
+        "doc" : "line3",
+        "default" : null
+      }, {
+        "name" : "pincode",
+        "type" : "string"
+      }, {
+        "name" : "country",
+        "type" : "string"
+      } ]
+    } ],
+    "default" : null
+  }, {
+    "name" : "user_id",
+    "type" : "long",
+    "doc" : "id of Order"
+  }, {
+    "name" : "user_name",
+    "type" : "string",
+    "doc" : "code of order"
+  }, {
+    "name" : "fullName",
+    "type" : "string"
+  }, {
+    "name" : "email",
+    "type" : "string"
+  }, {
+    "name" : "age",
+    "type" : "int"
+  }, {
+    "name" : "occurred_at",
+    "type" : [ "null", {
+      "type" : "long",
+      "logicalType" : "timestamp-millis"
+    } ],
+    "default" : null
+  }, {
+    "name" : "published_at",
+    "type" : [ "null", {
+      "type" : "long",
+      "logicalType" : "timestamp-millis"
+    } ],
+    "default" : null
+  }, {
+    "name" : "shipping_addresses",
+    "type" : {
+      "type" : "array",
+      "items" : "Address"
+    }
+  } ]
 }
