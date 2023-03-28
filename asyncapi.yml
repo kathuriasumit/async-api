@@ -56,6 +56,12 @@ components:
             status: 'INACTIVE'
             user_id: 333333
             user_name: laurent
+            shipping_addresses:
+              - code : "code"
+                line1 : "line1"
+                line2 : "line2"
+                pincode: "23"
+                country: "us"
         - name: john
           summary: Example for john user
           headers: 
@@ -67,4 +73,4 @@ components:
               "content-type": "application/avro"
               "sentAt": "2020-03-11T08:03:28Z"
           payload: |-
-            {"fullName": "john12", "email": "john@microcks.io", "age": 11, "user_id" : 34343, "status" : "ACTIVE", "user_name" : "john", "billing_address" : {"code" : "acode", "line1" : "line1", "line2" : "line2", "pincode" : "pc", "country" : "us"}}
+            {"fullName": "john12", "email": "john@microcks.io", "age": 11, "user_id" : 34343, "status" : "ACTIVE", "user_name" : "john", "billing_address" : {"code" : "acode", "line1" : "line1", "line2" : "line2", "pincode" : "pc", "country" : "us"}, "shipping_addresses" : {}}
