@@ -14,6 +14,18 @@ info:
 defaultContentType: application/json
 channels:
   user3/signedup3:
+    bindings:
+      kafka:
+        topic: 'my-specific-topic-name'
+        partitions: 20
+        replicas: 3
+        topicConfiguration:
+          cleanup.policy: ["delete", "compact"]
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        bindingVersion: '0.4.0'
     description: The topic on which user signed up events may be consumed
     subscribe:
       summary: Receive informations about user signed up
