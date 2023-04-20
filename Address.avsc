@@ -1,0 +1,29 @@
+{
+  "type" : "record",
+  "name" : "Address",
+  "namespace" : "com.async.event.user.v1",
+  "fields" : [ {
+    "name" : "code",
+    "type" : "string",
+    "doc" : "address code"
+  }, {
+    "name" : "line1",
+    "type" : "string",
+    "doc" : "line1"
+  }, {
+    "name" : "line2",
+    "type" : "string",
+    "doc" : "line2"
+  }, {
+    "name" : "line3",
+    "type" : [ "null", "string" ],
+    "doc" : "line3",
+    "default" : null
+  }, {
+    "name" : "pincode",
+    "type" : "string"
+  }, {
+    "name" : "country",
+    "type" : "string"
+  } ]
+}
